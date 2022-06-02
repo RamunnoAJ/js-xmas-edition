@@ -9,6 +9,16 @@ function probarValidarNombre() {
       "Este campo debe tener menos de 50 caracteres",
     "Validar nombre no validó que el nombre sea menor a 50 caracteres"
   );
+
+  console.assert(
+    validarNombre("12341233421") === "El campo nombre sólo acepta letras",
+    "Validar nombre no validó que el nombre contenga solo letras"
+  );
+
+  console.assert(
+    validarNombre("Agustin") === "",
+    "la función validar nombre no funcionó con un nombre válido"
+  );
 }
 
 probarValidarNombre();
@@ -17,6 +27,11 @@ function probarValidarCiudad() {
   console.assert(
     validarCiudad("") === "Debes seleccionar una ciudad",
     "Validar ciudad no validó que hayas seleccionado una ciudad"
+  );
+
+  console.assert(
+    validarCiudad("Buenos Aires") === "",
+    "La función validar ciudad no funcióno con una ciudad válida"
   );
 }
 
@@ -31,9 +46,20 @@ function probarValidarDescripcionRegalo() {
 
   console.assert(
     validarDescripcionRegalo(
-      "acbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghija"
-    ) === "Este campo debe tener menos de 500 caracteres",
-    "Validar descripción del regalo no validó que hayas escrito menos de 500 caracteres"
+      "acbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghijacbdefghij"
+    ) === "Este campo debe tener menos de 100 caracteres",
+    "Validar descripción del regalo no validó que hayas escrito menos de 100 caracteres"
+  );
+
+  console.assert(
+    validarDescripcionRegalo("Descripcion") === "",
+    "La función validar descripción regalo no funcionó con una descripción correcta"
+  );
+
+  console.assert(
+    validarDescripcionRegalo(",.,.") ===
+      "Este campo solo puede contener letras y números",
+    "La función validar descripción regalo no validó que fuera solo números y letras"
   );
 }
 
