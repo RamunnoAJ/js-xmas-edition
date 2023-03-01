@@ -1,3 +1,4 @@
+
 const $form = document.querySelector("#carta-a-santa");
 
 const nombre = $form.nombre.value;
@@ -39,6 +40,7 @@ function validarCiudad(ciudad) {
 
 function validarDescripcionRegalo(descripcionRegalo) {
   if (descripcionRegalo.length === 0) {
+
     return "Este campo debe tener al menos 1 caracter";
   }
   if (descripcionRegalo.length >= 100) {
